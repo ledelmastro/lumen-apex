@@ -6,7 +6,7 @@ Projeto MVP da disciplina **Frontend Avançado** do curso **Desenvolvimento Full
 
 ## 🔗 Links Oficiais
 *   **Repositório GitHub:** https://github.com/ledelmastro/lumen-apex
-*   **Live Demo (GitHub Pages):** *[(https://ledelmastro.github.io/lumen-apex/relatorios)]*
+*   **Live Demo (GitHub Pages):** *(https://ledelmastro.github.io/lumen-apex/relatorios)*
 
 ## 📺 Demonstração em Vídeo
 > **[Link para o vídeo no YouTube aqui]**  
