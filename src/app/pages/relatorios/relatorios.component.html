@@ -1,0 +1,120 @@
+<!-- htmlhint attr-lowercase:false -->
+<div class="p-8 bg-slate-50 dark:bg-slate-900 min-h-screen space-y-8">
+  <!-- Header com Gradiente e Ações -->
+  <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-700 pb-6">
+    <div>
+      <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        Relatórios de Ativos
+      </h2>
+      <p class="text-slate-500 dark:text-slate-400 mt-1">
+        Monitoramento em tempo real do inventário tecnológico da <span class="font-semibold text-blue-600">ENABRA</span>.
+      </p>
+    </div>
+    <div class="flex gap-3">
+      <button 
+        (click)="exportarPDF()"
+        title="Salvar listagem em formato PDF"
+        class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 transition-all shadow-sm">
+        Exportar PDF
+      </button>
+      <button 
+        (click)="atualizarDados()"
+        title="Sincronizar com o banco de dados"
+        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium shadow-md shadow-blue-200 dark:shadow-none transition-all">
+        Atualizar Dados
+      </button>
+    </div>
+  </header>
+
+  <!-- Seção de Cards com Efeito de Elevação -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <app-summary-card 
+      label="Total de Dispositivos" 
+      [value]="totalItens()" 
+      [isLoading]="carregando()"
+      class="hover:scale-[1.02] transition-transform duration-300"
+      iconBg="bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+      <svg icon class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+    </app-summary-card>
+
+    <app-summary-card 
+      label="Patrimônio Estimado" 
+      [value]="'R$ ' + (valorTotal() | number:'1.2-2')" 
+      [isLoading]="carregando()"
+      class="hover:scale-[1.02] transition-transform duration-300"
+      iconBg="bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+      <svg icon class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    </app-summary-card>
+
+    <app-summary-card 
+      label="Saúde do Inventário" 
+      value="98.2%" 
+      [isLoading]="carregando()"
+      class="hover:scale-[1.02] transition-transform duration-300"
+      iconBg="bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400">
+      <svg icon class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+    </app-summary-card>
+  </div>
+
+  <!-- Tabela Estilizada com Glassmorphism -->
+  <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl overflow-x-auto">
+    <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/50">
+      <h3 class="font-bold text-slate-800 dark:text-slate-100">Listagem Detalhada</h3>
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+        {{ items().length }} Itens Encontrados
+      </span>
+    </div>
+    
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-slate-50 dark:bg-slate-700/50">
+            <th class="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Ativo</th>
+            <th class="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Categoria</th>
+            <th class="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider text-center">Status</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+          @for (item of items(); track item.id) {
+            <tr class="hover:bg-blue-50/30 dark:hover:bg-slate-700/30 transition-all group">
+              <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                </div>
+                <span class="font-medium text-slate-700 dark:text-slate-200">{{ item.nome }}</span>
+              </div>
+            </td>
+            <td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 italic">
+              {{ item.categoria }}
+            </td>
+            <td class="px-6 py-4 text-center">
+              <span 
+  class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter shadow-sm"
+  [ngClass]="{
+    'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300': item.status === 'Disponível',
+    'bg-amber-100 text-amber-700': item.status === 'Manutenção',
+    'bg-blue-100 text-blue-700': item.status === 'Alocado'
+  }">
+  
+  <span class="w-1.5 h-1.5 rounded-full mr-2" 
+    [ngClass]="{
+      'bg-emerald-500': item.status === 'Disponível',
+      'bg-amber-500': item.status === 'Manutenção',
+      'bg-blue-500': item.status === 'Alocado'
+    }"></span>
+    
+  {{ item.status }}
+</span>
+            </td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="3" class="px-6 py-10 text-center text-slate-500 dark:text-slate-400 italic">Dados de auditoria não disponíveis ou base vazia.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "cliente": "ENABRA",
+    "servico": "Migração de Servidor e Gestão de Membros",
+    "tecnologia": "WordPress / Mercado Pago",
+    "ano": 2025
+  },
+  {
+    "id": 2,
+    "cliente": "Lumen Tecnologia",
+    "servico": "Desenvolvimento Lumen-Apex",
+    "tecnologia": "Angular 17+ / Signals",
+    "ano": 2026
+  }
+]

@@ -1,0 +1,54 @@
+<div class="p-6 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-400 mb-6">Cases de Sucesso - Lumen Tecnologia</h2>
+
+  <!-- Grid de SummaryCards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <app-summary-card 
+      title="Projetos" 
+      label="Entregues" 
+      value="25+" 
+      icon="check-circle"
+      class="dark:brightness-110">
+    </app-summary-card>
+
+    <app-summary-card 
+      title="Sistemas" 
+      label="em Nuvem" 
+      value="08" 
+      icon="cloud"
+      class="dark:brightness-110">
+    </app-summary-card>
+
+    <app-summary-card 
+      title="Uptime" 
+      label="Servidores" 
+      value="99.9%" 
+      icon="activity"
+      class="dark:brightness-110">
+    </app-summary-card>
+  </div>
+
+  <!-- Tabela de Projetos -->
+  <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700">
+    <table class="w-full text-left">
+      <thead class="bg-slate-50 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 uppercase text-xs font-bold">
+        <tr>
+          <th class="px-6 py-4">Nome do Projeto</th>
+          <th class="px-6 py-4">Categoria</th>
+          <th class="px-6 py-4">Status</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+        @for (item of projetos(); track item.nome) {
+          <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors bg-white dark:bg-slate-800">
+            <td class="px-6 py-4 font-semibold text-slate-800 dark:text-white">{{ item.nome }}</td>
+            <td class="px-6 py-4 text-slate-600 dark:text-slate-400">{{ item.categoria }}</td>
+            <td class="px-6 py-4">
+              <app-status-badge [status]="item.status"></app-status-badge>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
