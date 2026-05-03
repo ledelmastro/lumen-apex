@@ -4,12 +4,14 @@
 
 Projeto MVP da disciplina **Frontend Avançado** do curso **Desenvolvimento Full Stack** pela **PUC-RJ**. O projeto disponibiliza uma plataforma de monitoramento e gestão de ativos de TI, focada no suporte técnico e desenvolvimento.
 
+## 📺 Demonstração em Vídeo
+> **[Link para o vídeo no YouTube aqui]**  
+
 ## 🔗 Links Oficiais
 *   **Repositório GitHub:** https://github.com/ledelmastro/lumen-apex
 *   **Live Demo (GitHub Pages):** [![Acessar Live Demo](src/assets/screenshot-1777794909135.png)](https://ledelmastro.github.io/lumen-apex/)
 ▶️ [**Clique aqui para abrir o Live Demo em uma nova aba**](https://ledelmastro.github.io/lumen-apex/)
-## 📺 Demonstração em Vídeo
-> **[Link para o vídeo no YouTube aqui]**  
+<a href="https://ledelmastro.github.io/lumen-apex/" target="_blank">Clique aqui para abrir o Live Demo em uma nova aba ↗️</a>
 
 ---
 
