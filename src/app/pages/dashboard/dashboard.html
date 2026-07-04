@@ -74,7 +74,7 @@
 
 <div class="mt-8">
   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-    <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Lista de Ativos - ENABRA</h3>
+    <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Lista de Ativos - Lumen</h3>
     <div class="flex gap-4">
       <button 
         (click)="abrirModal()" 
@@ -158,7 +158,7 @@
     <div class="relative z-10">
       <h3 class="text-xl font-bold text-white">Suporte Técnico Ativo</h3>
       <p class="text-slate-400 dark:text-blue-100 mt-1">
-        Você tem <span class="font-bold text-white">{{ totalChamadosAbertos() }}</span> chamados pendentes para a <span class="font-bold">ENABRA</span>.
+        Você tem <span class="font-bold text-white">{{ totalChamadosAbertos() }}</span> chamados pendentes para a <span class="font-bold">Lumen</span>.
       </p>
     </div>
     
@@ -177,27 +177,27 @@
       
       <form (ngSubmit)="salvarAtivo()" #ativoForm="ngForm" class="space-y-4">
         <div>
-          <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Nome do Equipamento</label>
-          <input type="text" name="nome" [(ngModel)]="novoAtivo.nome" required class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+          <label for="ativo-nome-dashboard" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Nome do Equipamento</label>
+          <input id="ativo-nome-dashboard" type="text" name="nome" [(ngModel)]="novoAtivo.nome" required class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
         </div>
         
         <div>
-          <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Modelo</label>
-          <input type="text" name="modelo" [(ngModel)]="novoAtivo.modelo" required class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+          <label for="ativo-modelo-dashboard" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Modelo</label>
+          <input id="ativo-modelo-dashboard" type="text" name="modelo" [(ngModel)]="novoAtivo.modelo" required class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
         </div>
 
         <div class="grid grid-cols-2 gap-4">
           <div>
-            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Status</label>
-            <select name="status" [(ngModel)]="novoAtivo.status" class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none">
+            <label for="ativo-status-dashboard" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Status</label>
+            <select id="ativo-status-dashboard" name="status" [(ngModel)]="novoAtivo.status" class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none">
               <option value="Disponível">Disponível</option>
               <option value="Manutenção">Manutenção</option>
               <option value="Alocado">Alocado</option>
             </select>
           </div>
           <div>
-            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ID Patrimônio</label>
-            <input type="number" name="id" [(ngModel)]="novoAtivo.id" required class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none">
+            <label for="ativo-id-dashboard" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ID Patrimônio</label>
+            <input id="ativo-id-dashboard" type="number" name="id" [(ngModel)]="novoAtivo.id" required class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none">
           </div>
         </div>
 

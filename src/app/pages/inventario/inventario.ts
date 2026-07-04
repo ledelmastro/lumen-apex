@@ -105,7 +105,7 @@ export class Inventario implements OnInit {
    * Remove um ativo do sistema após confirmação do usuário.
    */
   excluir(id: number) {
-    if (confirm('Deseja realmente remover este ativo do inventário da ENABRA?')) {
+    if (confirm('Deseja realmente remover este ativo do inventário da Lumen Apex?')) {
       this.inventarioService.removerItem(id);
       this.menuAbertoId.set(null);
     }

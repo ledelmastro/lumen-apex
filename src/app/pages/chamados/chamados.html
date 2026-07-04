@@ -5,9 +5,9 @@
     <div class="lg:col-span-1">
       <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 sticky top-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-lg font-bold text-slate-800 dark:text-white">
+          <h4 class="text-lg font-bold text-slate-800 dark:text-white">
             {{ chamadoForm.id ? 'Editar Ticket' : 'Novo Ticket Lumen' }}
-          </h3>
+          </h4>
           @if (chamadoForm.id) {
             <button (click)="fecharModal()" class="text-xs text-slate-400 hover:text-red-500 underline">Cancelar</button>
           }
@@ -21,16 +21,16 @@
 
         <form #f="ngForm" (submit)="salvarChamado()" class="space-y-4">
           <div>
-            <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Serviço</label>
-            <input name="servico" [(ngModel)]="chamadoForm.servico" required 
+            <label for="servico-input" class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Serviço</label>
+            <input id="servico-input" name="servico" [(ngModel)]="chamadoForm.servico" required 
                    class="w-full border dark:border-slate-700 rounded-lg p-2 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" 
                    placeholder="Ex: Manutenção Win 10">
           </div>
 
           <div class="grid grid-cols-1 gap-4">
             <div>
-              <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Urgência</label>
-              <select name="urgencia" [(ngModel)]="chamadoForm.urgencia" 
+              <label for="urgencia-select" class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Urgência</label>
+              <select id="urgencia-select" name="urgencia" [(ngModel)]="chamadoForm.urgencia" 
                       class="w-full border dark:border-slate-700 rounded-lg p-2 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                 <option value="Baixa">Baixa</option>
                 <option value="Média">Média</option>
@@ -40,8 +40,8 @@
             
             @if (chamadoForm.id) {
               <div>
-                <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Status</label>
-                <select name="status" [(ngModel)]="chamadoForm.status" 
+                <label for="status-select" class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Status</label>
+                <select id="status-select" name="status" [(ngModel)]="chamadoForm.status" 
                         class="w-full border dark:border-slate-700 rounded-lg p-2 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                   <option value="Alocado">Alocado</option>
                   <option value="Manutenção">Manutenção</option>
@@ -61,9 +61,10 @@
 
     <!-- Coluna da Listagem -->
     <div class="lg:col-span-2 space-y-4">
+      <h2 class="sr-only">Lista de Chamados</h2>
       <div class="flex items-center justify-between mb-2">
         <h3 class="text-lg font-bold text-slate-800 dark:text-white">Gestão de Atendimentos</h3>
-        <span class="text-xs font-mono text-slate-400">{{ chamados().length }} Registros</span>
+        <span class="text-xs font-mono text-slate-500 dark:text-slate-400">{{ chamados().length }} Registros</span>
       </div>
       
       @for (item of chamados(); track item.id) {
@@ -94,7 +95,7 @@
         </div>
       } @empty {
         <div class="text-center py-12 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-800">
-          <p class="text-slate-400">Nenhum chamado registrado para a ENABRA.</p>
+          <p class="text-slate-400">Nenhum chamado registrado para a Lumen.</p>
         </div>
       }
     </div>

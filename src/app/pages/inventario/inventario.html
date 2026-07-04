@@ -7,7 +7,7 @@
       Gestão de Inventário
     </h2>
     <p class="text-slate-500 dark:text-slate-400 mt-1">
-      Administração de hardware e infraestrutura técnica da <span class="font-semibold text-blue-600">ENABRA</span>.
+      Administração de hardware e infraestrutura técnica da <span class="font-semibold text-blue-600">Lumen</span>.
     </p>
   </div>
   
@@ -143,31 +143,31 @@
       
       <form (ngSubmit)="salvarAtivo()" #f="ngForm" class="space-y-4">
         <div>
-          <label class="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">Nome</label>
-          <input type="text" name="nome" [(ngModel)]="novoAtivo.nome" required 
+          <label for="ativo-nome" class="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">Nome</label>
+          <input id="ativo-nome" type="text" name="nome" [(ngModel)]="novoAtivo.nome" required 
                  class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                  placeholder="Ex: Desktop NA">
         </div>
         
         <div>
-          <label class="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">Modelo</label>
-          <input type="text" name="modelo" [(ngModel)]="novoAtivo.modelo" required 
+          <label for="ativo-modelo" class="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">Modelo</label>
+          <input id="ativo-modelo" type="text" name="modelo" [(ngModel)]="novoAtivo.modelo" required 
                  class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                  placeholder="Ex: Core 2 Duo E7500">
         </div>
 
         <div class="grid grid-cols-2 gap-4">
           <div>
-            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ID Patrimônio</label>
-            <input type="number" name="id" [(ngModel)]="novoAtivo.id" 
+            <label for="ativo-id" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ID Patrimônio</label>
+            <input id="ativo-id" type="number" name="id" [(ngModel)]="novoAtivo.id" 
                    [disabled]="!!novoAtivo.id"
                    class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all opacity-70 cursor-not-allowed"
                    placeholder="Automático">
             <small class="text-[9px] text-slate-400 mt-1 block">ID fixo após criação</small>
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">Status</label>
-            <select name="status" [(ngModel)]="novoAtivo.status" 
+            <label for="ativo-status" class="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">Status</label>
+            <select id="ativo-status" name="status" [(ngModel)]="novoAtivo.status" 
                     class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
               <option value="Disponível">Disponível</option>
               <option value="Manutenção">Manutenção</option>

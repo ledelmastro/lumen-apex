@@ -49,7 +49,7 @@ export class Chamados {
       // Modo Edição: Clona o objeto para o formulário
       this.chamadoForm = { ...chamadoParaEditar };
     } else {
-      // Modo Criação: Limpa o formulário
+      // Modo Criação: Garante que o formulário esteja limpo
       this.chamadoForm = this.getFormInicial();
     }
     this.modalAberto.set(true);
@@ -76,7 +76,7 @@ export class Chamados {
         // Lógica de Criação: Gera novo ticket
         const novoTicket = {
           ...this.chamadoForm,
-          id: `TKT-00${this.chamados().length + 1}`,
+          id: `TKT-${Date.now()}`, // CORREÇÃO: Usa timestamp para garantir ID único
           data: new Date().toLocaleDateString()
         };
         this.chamados.update(lista => [novoTicket, ...lista]);
@@ -91,7 +91,7 @@ export class Chamados {
   }
 
   excluir(id: string) {
-    if (confirm('Deseja realmente remover este chamado do sistema da ENABRA?')) {
+    if (confirm('Deseja realmente remover este chamado do sistema da Lumen?')) {
       this.chamados.update(l => l.filter(t => t.id !== id));
     }
   }

@@ -28,7 +28,7 @@ export class Relatorios implements OnInit {
   // Aqui você pode definir um valor fixo ou calcular baseado em alguma propriedade do item
   valorTotal = computed(() => {
     // Exemplo: se cada item tivesse um preço, você somaria aqui. 
-    // Por enquanto, vamos retornar um valor base multiplicado pelo total para o relatório da ENABRA
+    // Por enquanto, vamos retornar um valor base multiplicado pelo total para o relatório da Lumen
     return this.items().length * 1500; 
   });
 

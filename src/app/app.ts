@@ -17,7 +17,7 @@ export class AppComponent {
   title = 'lumen-apex';
   isMobileMenuOpen = signal(false);
 
-  toggleMobileMenu() {
-    this.isMobileMenuOpen.update(val => !val);
+  toggleMobileMenu = () => {
+  this.isMobileMenuOpen.update(v => !v);
   }
 }

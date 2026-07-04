@@ -26,7 +26,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class SummaryCardComponent {
   label = input.required<string>();
-  value = input.required<number | string>();
+  value = input.required<number | string | null>();
   iconBg = input<string>('bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400');
   
   // A propriedade que faltava para resolver o erro NG8002:

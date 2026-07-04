@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "cliente": "ENABRA",
+    "cliente": "Vortex Tecnologia",
     "servico": "Migração de Servidor e Gestão de Membros",
     "tecnologia": "WordPress / Mercado Pago",
     "ano": 2025
   },
   {
     "id": 2,
-    "cliente": "Lumen Tecnologia",
+    "cliente": "Improve MX",
     "servico": "Desenvolvimento Lumen-Apex",
     "tecnologia": "Angular 17+ / Signals",
     "ano": 2026

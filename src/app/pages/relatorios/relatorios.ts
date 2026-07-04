@@ -12,7 +12,7 @@ import { StatusBadgeComponent } from '../../components/status-badge/status-badge
     <div class="p-6 space-y-8">
       <header>
         <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Relatórios de Ativos</h2>
-        <p class="text-slate-500">Métricas detalhadas do inventário ENABRA.</p>
+        <p class="text-slate-500">Métricas detalhadas do inventário Lumen.</p>
       </header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

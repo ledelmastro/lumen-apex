@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   
   <!-- Botão Hambúrguer para Mobile -->
   <button 
-    (click)="toggleMobileMenu()"
+    (click)="toggleMobileMenu()()"
     class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
     aria-label="Abrir menu lateral"
   >
@@ -55,7 +55,7 @@ import { CommonModule } from '@angular/common';
             <span class="text-[10px] bg-blue-100 dark:bg-blue-900/30 text-blue-600 px-2 py-0.5 rounded-full">Novo</span>
           </div>
           <div class="space-y-3">
-            <p class="text-xs text-slate-500 dark:text-slate-400">Nenhuma notificação pendente para os sistemas da <span class="font-bold">ENABRA</span>.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Nenhuma notificação pendente para os sistemas da <span class="font-bold">Lumen</span>.</p>
           </div>
         </div>
       }

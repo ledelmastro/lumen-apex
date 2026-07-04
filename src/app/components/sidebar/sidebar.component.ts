@@ -6,33 +6,23 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [RouterLink, RouterLinkActive],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+    <!-- Backdrop para mobile, aparece fora da sidebar -->
+    @if (isMobileMenuOpen()) {
+      <div 
+        (click)="toggleMobileMenu()()"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 md:hidden"
+      ></div>
+    }
+    
+    <!-- Sidebar Principal -->
     <aside 
       [class.w-64]="!isCollapsed()"
-      [class.w-20]="isCollapsed()" 
-      class="bg-slate-950 text-white h-full flex-col border-r border-slate-800 transition-all duration-300 ease-in-out relative
+      [class.w-20]="isCollapsed()"
+      class="bg-slate-950 text-white h-full flex flex-col border-r border-slate-800 transition-all duration-300 ease-in-out relative z-50
              md:flex"
-      [class.hidden]="!isMobileMenuOpen()"
-      [class.fixed]="isMobileMenuOpen()"
-      [class.inset-y-0]="isMobileMenuOpen()"
-      [class.left-0]="isMobileMenuOpen()"
-      [class.z-50]="isMobileMenuOpen()"
+      [class.hidden]="!isMobileMenuOpen() && isMobile()"
       [class.flex]="isMobileMenuOpen() || !isMobile()"
     >
-      <!-- Backdrop para mobile -->
-      @if (isMobileMenuOpen()) {
-        <div 
-          (click)="toggleMobileMenu()"
-          class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 md:hidden"
-        ></div>
-      }
-
-      <!-- Conteúdo da Sidebar -->
-      <div 
-        [class.w-64]="!isCollapsed()"
-        [class.w-20]="isCollapsed()"
-        class="bg-slate-950 text-white h-full flex flex-col border-r border-slate-800 transition-all duration-300 ease-in-out relative z-50"
-      >
-      
       <!-- Botão Toggle (Estilo Stripe) -->
       <button 
         (click)="toggle()"
@@ -84,7 +74,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         </a>
       </div>
 
-      </div>
     </aside>
   `,
   styles: [`
