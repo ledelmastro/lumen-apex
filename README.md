@@ -5,7 +5,8 @@
 Projeto MVP da disciplina **Frontend Avançado** do curso **Desenvolvimento Full Stack** pela **PUC-RJ**. O projeto disponibiliza uma plataforma de monitoramento e gestão de ativos de TI, focada no suporte técnico e desenvolvimento.
 
 ## 📺 Demonstração em Vídeo
-> **[https://www.youtube.com/watch?v=Oi59x8zhXIw]**  
+>
+*   **Vídeo Youtube:** https://www.youtube.com/watch?v=Oi59x8zhXIw
 
 ## 🔗 Links Oficiais
 *   **Repositório GitHub:** https://github.com/ledelmastro/lumen-apex
