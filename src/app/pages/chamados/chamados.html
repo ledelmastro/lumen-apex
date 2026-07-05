@@ -74,6 +74,8 @@
             <div class="flex items-center gap-2 mb-1">
               <span class="text-[10px] bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 p-1 rounded font-mono border dark:border-slate-600">{{ item.id }}</span>
               <app-status-badge [status]="item.status"></app-status-badge>
+              //todo O componente StatusBadge é um componente visual que indica o status do chamado. 
+              //todo Ele muda de cor e texto conforme o status atual do item, proporcionando uma rápida identificação visual.
             </div>
             <h4 class="font-bold text-slate-800 dark:text-white group-hover:text-blue-600 transition-colors">{{ item.servico }}</h4>
             <p class="text-xs text-slate-400 dark:text-slate-500">{{ item.data }} • Urgência: <span [class.text-red-500]="item.urgencia === 'Alta'">{{ item.urgencia }}</span></p>
@@ -82,6 +84,8 @@
           <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
             <button (click)="abrirModal(item)" 
                     [appTooltip]="'Editar este chamado'"
+                    //todo Embora seja uma diretiva, ela atua como um componente de UI. Ao adicionar appTooltip em nos principais botões
+                    //todo da aplicação, eu levo interatividade para qualquer parte do projeto.
                     class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg transition-colors" title="Editar">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
             </button>

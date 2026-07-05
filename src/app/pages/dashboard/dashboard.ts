@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, computed, signal, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
-import { Router } from '@angular/router'; // Importado para fazer o "Ver Chamados" funcionar
+import { Router } from '@angular/router'; // todo Serviço de roteamento do Angular
 import { InventarioService } from '../../services/inventario.service';
 import { StatusBadgeComponent } from '../../components/status-badge/status-badge.component';
 import { TooltipDirective } from '../../directives/tooltip.directive';
@@ -8,7 +8,7 @@ import { TooltipDirective } from '../../directives/tooltip.directive';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.html',
-  standalone: true, // Adicionado standalone caso seu projeto siga este padrão
+  standalone: true, 
   imports: [FormsModule, StatusBadgeComponent, TooltipDirective], 
   styleUrl: './dashboard.css',
   changeDetection: ChangeDetectionStrategy.OnPush

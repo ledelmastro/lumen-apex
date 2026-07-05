@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { InventarioService } from './inventario';
+import { InventarioService } from './inventario.service';
 import { Inventario } from '../pages/inventario/inventario';
 
 describe('InventarioService', () => {

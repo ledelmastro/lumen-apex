@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes } from '@angular/router'; //todo Gestão de Rotas do Angular 
 import { DashboardComponent } from './pages/dashboard/dashboard'; 
 import { Inventario } from './pages/inventario/inventario';
 import { Relatorios } from './pages/relatorios/relatorios.component';
