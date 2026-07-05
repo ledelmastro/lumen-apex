@@ -97,6 +97,7 @@ src/app/
 │   ├── sidebar/         # Navegação lateral responsiva e menu mobile
 │   ├── status-badge/    # Etiquetas visuais de status (Disponível, etc)
 │   └── summary-card/    # Cards de indicadores com suporte a skeleton
+├── directives/          # Contém as diretivas de tooltips para os principais links do projeto   
 ├── models/              # Definições de interfaces e tipos (TypeScript)
 ├── pages/               # Componentes de visualização principal (Páginas)
 │   ├── chamados/        # Gestão de tickets e suporte técnico
