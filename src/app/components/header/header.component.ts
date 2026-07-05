@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, signal, HostListener, input } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
+import { TooltipDirective } from '../../directives/tooltip.directive';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule, TooltipDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
 <header class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-gray-200 dark:border-slate-800 h-16 flex items-center justify-between px-6 sticky top-0 z-40 transition-colors duration-300">
@@ -32,7 +33,7 @@ import { CommonModule } from '@angular/common';
     <button 
       (click)="theme.toggleTheme()"
       class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:ring-4 ring-blue-500/10 transition-all duration-300"
-      [title]="theme.darkMode() ? 'Ativar Modo Claro' : 'Ativar Modo Escuro'"
+      [appTooltip]="theme.darkMode() ? 'Ativar Modo Claro' : 'Ativar Modo Escuro'"
     >
       <span class="text-lg">{{ theme.darkMode() ? '🌙' : '☀️' }}</span>
     </button>

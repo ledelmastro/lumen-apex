@@ -2,11 +2,12 @@ import { Component, signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { StatusBadgeComponent } from '../../components/status-badge/status-badge.component';
+import { TooltipDirective } from '../../directives/tooltip.directive';
 
 @Component({
   selector: 'app-chamados',
   standalone: true,
-  imports: [CommonModule, FormsModule, StatusBadgeComponent],
+  imports: [CommonModule, FormsModule, StatusBadgeComponent, TooltipDirective],
   templateUrl: './chamados.html'
 })
 export class Chamados {

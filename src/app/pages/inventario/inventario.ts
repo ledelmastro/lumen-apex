@@ -3,12 +3,13 @@ import { InventarioService } from '../../services/inventario.service';
 import { StatusBadgeComponent } from '../../components/status-badge/status-badge.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TooltipDirective } from '../../directives/tooltip.directive';
 
 @Component({
   selector: 'app-inventario',
   standalone: true,
   templateUrl: './inventario.html',
-  imports: [CommonModule, StatusBadgeComponent, FormsModule],
+  imports: [CommonModule, StatusBadgeComponent, FormsModule, TooltipDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block w-full' }
 })

@@ -77,7 +77,8 @@
     <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Lista de Ativos - Lumen</h3>
     <div class="flex gap-4">
       <button 
-        (click)="abrirModal()" 
+        (click)="abrirModal()"
+        [appTooltip]="'Cadastrar um novo equipamento rapidamente'"
         class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-bold transition-all shadow-lg shadow-blue-500/20 active:scale-95 whitespace-nowrap"
       >
         + Novo Ativo
@@ -163,7 +164,9 @@
     </div>
     
     <!-- Botão Corrigido com (click) -->
-    <button (click)="verChamados()" class="relative z-10 bg-white text-slate-900 px-6 py-3 rounded-xl font-bold hover:scale-105 active:scale-95 transition-all shadow-lg">
+    <button (click)="verChamados()" 
+            [appTooltip]="'Navegar para a tela de gestão de chamados'"
+            class="relative z-10 bg-white text-slate-900 px-6 py-3 rounded-xl font-bold hover:scale-105 active:scale-95 transition-all shadow-lg">
       Ver Chamados
     </button>
   </div>
@@ -205,7 +208,9 @@
           <button (click)="fecharModal()" type="button" class="flex-1 px-4 py-3 rounded-xl font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-all">
             Cancelar
           </button>
-          <button type="submit" [disabled]="!ativoForm.valid" class="flex-1 px-4 py-3 rounded-xl font-semibold bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/30 transition-all">
+          <button type="submit" [disabled]="!ativoForm.valid" 
+                  [appTooltip]="'Salvar as alterações atuais no sistema'"
+                  class="flex-1 px-4 py-3 rounded-xl font-semibold bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/30 transition-all">
             Salvar Ativo
           </button>
         </div>
