@@ -1,0 +1,7 @@
+﻿[
+  { "id": 101, "nome": "Workstation Dell Precision", "categoria": "Hardware", "status": "Disponível" },
+  { "id": 102, "nome": "Monitor UltraWide 34\"", "categoria": "Periféricos", "status": "Alocado" },
+  { "id": 104, "nome": "Servidor ProLiant G10", "categoria": "Infraestrutura", "status": "Manutenção" },
+  { "id": 105, "nome": "MacBook Pro M3", "categoria": "Hardware", "status": "Alocado" },
+  { "id": 107, "nome": "Optiplex 780 - Lab São Paulo", "categoria": "Hardware", "status": "Disponível" }
+]
