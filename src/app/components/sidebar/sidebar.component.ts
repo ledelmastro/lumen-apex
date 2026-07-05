@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal, input, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+// Serviço de roteamento do Angular - Injeção de dependências e Diretivas de template
 
 @Component({ // Removido standalone: true - é o padrão no Angular v20+
   selector: 'app-sidebar',

@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router'; //todo Gestão de Rotas do Angular 
+import { Routes } from '@angular/router'; // Gestão de Rotas do Angular - Serviço de Injeção de dependências e Diretivas de template
 import { DashboardComponent } from './pages/dashboard/dashboard'; 
 import { Inventario } from './pages/inventario/inventario';
 import { Relatorios } from './pages/relatorios/relatorios.component';

@@ -1,4 +1,4 @@
-import { Component, signal, effect } from '@angular/core';
+import { Component, signal, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { StatusBadgeComponent } from '../../components/status-badge/status-badge.component';
@@ -86,7 +86,7 @@ export class Chamados {
       this.isSubmitting.set(false);
       this.showSuccess.set(true);
       this.fecharModal();
-      
+
       setTimeout(() => this.showSuccess.set(false), 3000);
     }, 800);
   }

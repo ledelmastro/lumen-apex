@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, computed, signal, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
-import { Router } from '@angular/router'; // todo Serviço de roteamento do Angular
+import { Router } from '@angular/router'; 
 import { InventarioService } from '../../services/inventario.service';
 import { StatusBadgeComponent } from '../../components/status-badge/status-badge.component';
 import { TooltipDirective } from '../../directives/tooltip.directive';
@@ -80,13 +80,15 @@ export class DashboardComponent implements OnInit {
   }
 
   salvarAtivo() {
-    // Melhorado: se o ID for 0, podemos gerar um baseado no timestamp para não repetir
     if (this.novoAtivo.nome) {
       if (this.novoAtivo.id === 0) {
         this.novoAtivo.id = Date.now();
       }
       this.inventarioService.adicionarItem({ ...this.novoAtivo });
       this.fecharModal();
+
+      // Adia a navegação para garantir que o LocalStorage seja atualizado pelo effect do serviço.
+      setTimeout(() => this.router.navigate(['/inventario']), 0);
     }
   }
 
